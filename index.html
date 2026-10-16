@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ZIZI | Digital products for a calmer, deeper life</title>
+<meta name="description" content="ZIZI creates digital guides and blueprints for pet care, parenting, beauty business and income building. Instant access on Whop.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231E2A1E'/%3E%3Cpath d='M18 46C18 30 30 18 46 18M18 38C22 30 30 24 40 24M18 30C22 26 26 24 32 22' fill='none' stroke='%23DCCBA4' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --forest:#1E2A1E; --olive:#3B3A2A; --walnut:#6B4E34; --caramel:#A67C52; --cream:#DCCBA4;
+  --text:#EFE6D2; --muted:#B9AE96;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Plus Jakarta Sans',system-ui,sans-serif; --script:'Pinyon Script','Snell Roundhand',cursive;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+body{margin:0;font-family:var(--sans);color:var(--text);line-height:1.65;background:var(--forest);
+  background-image:linear-gradient(180deg,#1E2A1E 0%,#2B3125 35%,#3B3A2A 70%,#2E2A20 100%);background-attachment:fixed}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.script{font-family:var(--script);color:var(--cream);font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.1}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;margin:0}
+.eyebrow{letter-spacing:.28em;text-transform:uppercase;font-size:.72rem;color:var(--caramel)}
+.divider{display:flex;align-items:center;gap:14px;justify-content:center;color:var(--caramel);margin:22px 0}
+.divider::before,.divider::after{content:"";height:1px;width:80px;background:linear-gradient(90deg,transparent,var(--caramel))}
+.divider::after{transform:scaleX(-1)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(30,42,30,.85);backdrop-filter:blur(10px);z-index:60}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(30,42,30,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(220,203,164,.14)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand svg{height:36px;width:auto}
+.brand span{letter-spacing:.42em;font-size:.85rem;font-weight:500;color:var(--cream)}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:.82rem;letter-spacing:.08em}
+nav a{color:var(--muted);transition:color .2s}nav a:hover{color:var(--cream)}
+.btn{display:inline-block;padding:13px 28px;border-radius:999px;background:var(--cream);color:var(--forest);font-weight:600;font-size:.88rem;letter-spacing:.04em;border:1px solid var(--cream);transition:.25s;cursor:pointer}
+.btn:hover{background:var(--caramel);border-color:var(--caramel);color:#fff;transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--cream);border-color:rgba(220,203,164,.5)}
+.btn.ghost:hover{background:rgba(220,203,164,.12);color:var(--cream)}
+.hero{position:relative;text-align:center;padding:110px 0 100px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(166,124,82,.22),transparent 60%),radial-gradient(ellipse at 50% 100%,rgba(30,42,30,.9),transparent 70%)}
+.hero .wrap{position:relative}
+.hero-mark{height:96px;margin:0 auto 26px;display:block;opacity:.95}
+.hero h1{font-size:clamp(2.8rem,8vw,5.6rem);text-transform:uppercase;letter-spacing:.03em;color:var(--cream);margin:10px 0 0}
+.hero p.lead{max-width:560px;margin:22px auto 34px;color:var(--muted);font-size:1.05rem}
+.hero .tag{letter-spacing:.3em;font-size:.72rem;color:var(--caramel);text-transform:uppercase}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+section{padding:84px 0}
+.head{text-align:center;max-width:620px;margin:0 auto 52px}
+.head h2{font-size:clamp(2rem,5vw,3.2rem);color:var(--cream);margin-top:10px}
+.head p{color:var(--muted);margin:14px 0 0}
+.grid{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{display:flex;flex-direction:column;background:linear-gradient(160deg,rgba(59,58,42,.75),rgba(30,42,30,.85));border:1px solid rgba(220,203,164,.16);border-radius:20px;padding:30px 26px;transition:.3s;position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(166,124,82,.25),transparent 70%)}
+.card:hover{transform:translateY(-6px);border-color:rgba(220,203,164,.4);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.card .tag{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--caramel)}
+.card h3{font-size:1.75rem;color:var(--cream);margin:12px 0 10px}
+.card p{color:var(--muted);font-size:.94rem;margin:0 0 16px}
+.card ul{list-style:none;padding:0;margin:0 0 26px;font-size:.86rem;color:var(--text)}
+.card li{padding:5px 0 5px 20px;position:relative}
+.card li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:1px;background:var(--caramel)}
+.card .btn{margin-top:auto;text-align:center}
+.steps{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));text-align:center}
+.step .n{font-family:var(--serif);font-size:3rem;color:var(--caramel);line-height:1}
+.step h3{font-size:1.4rem;color:var(--cream);margin:8px 0}
+.step p{color:var(--muted);font-size:.92rem;margin:0}
+.quote{text-align:center;padding:70px 0}
+.quote blockquote{margin:0 auto;max-width:640px;font-family:var(--serif);font-size:clamp(1.5rem,3.6vw,2.3rem);color:var(--cream);letter-spacing:.04em}
+.about{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:center}
+.about h2{font-size:clamp(2rem,5vw,3rem);color:var(--cream);margin:10px 0 16px}
+.about p{color:var(--muted)}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.values div{border:1px solid rgba(220,203,164,.16);border-radius:14px;padding:18px;text-align:center;letter-spacing:.2em;text-transform:uppercase;font-size:.72rem;color:var(--cream);background:rgba(30,42,30,.5)}
+.faq{max-width:760px;margin:0 auto}
+details{border-bottom:1px solid rgba(220,203,164,.18);padding:20px 4px}
+summary{cursor:pointer;font-family:var(--serif);font-size:1.35rem;color:var(--cream);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--caramel);font-family:var(--sans)}
+details[open] summary::after{content:"\2013"}
+details p{color:var(--muted);margin:12px 0 0}
+.contact{text-align:center}
+.links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+footer{border-top:1px solid rgba(220,203,164,.14);padding:40px 0 48px;text-align:center;color:var(--muted);font-size:.82rem}
+footer .brand{justify-content:center;margin-bottom:12px}
+@media(max-width:760px){nav ul{display:none}.hero{padding:80px 0 70px}section{padding:64px 0}.values{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- Reusable ZIZI mark -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 64 100">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <path d="M2 8C8 8 14 12 18 18M2 16C12 16 22 20 28 28M2 24C16 22 32 30 40 42"/>
+      <path d="M62 4C44 14 14 40 4 62M62 14C50 22 34 34 26 48C22 56 30 62 62 52"/>
+      <path d="M62 30C52 38 40 46 38 56C38 64 48 64 62 62M62 42C54 48 48 54 50 60"/>
+      <path d="M4 66C12 78 28 90 44 90C54 90 60 84 62 76M18 66C24 76 34 82 46 80M32 68C38 72 44 74 52 72"/>
+    </g>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="ZIZI home"><svg style="color:var(--cream)" viewBox="0 0 64 100" aria-hidden="true"><use href="#mark"/></svg><span>ZIZI</span></a>
+    <nav><ul>
+      <li><a href="#products">Products</a></li><li><a href="#how">How it works</a></li>
+      <li><a href="#about">About</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li>
+    </ul></nav>
+    <a href="#products" class="btn">Shop now</a>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <svg class="hero-mark" style="color:var(--cream)" viewBox="0 0 64 100" aria-hidden="true"><use href="#mark"/></svg>
+  <div class="tag">Digital products</div>
+  <h1>Rooted in Depth</h1>
+  <div class="script" style="margin-top:6px">slow moments. loud dreams. wild heart.</div>
+  <p class="lead">Thoughtfully made guides and blueprints to help you care, grow and build with intention. Download instantly and start the same day.</p>
+  <div class="cta-row"><a href="#products" class="btn">Explore products</a><a href="#how" class="btn ghost">How it works</a></div>
+</div></div>
+
+<section id="products"><div class="wrap">
+  <div class="head"><div class="eyebrow">The collection</div><h2>Digital products</h2><p>Each guide is yours to keep, delivered instantly through secure Whop checkout.</p></div>
+  <div class="grid" id="product-grid"></div>
+</div></section>
+
+<section id="how" style="background:rgba(30,42,30,.4)"><div class="wrap">
+  <div class="head"><div class="eyebrow">Simple by design</div><h2>How it works</h2></div>
+  <div class="steps">
+    <div class="step"><div class="n">01</div><h3>Choose</h3><p>Browse the collection and pick the guide that fits where you are right now.</p></div>
+    <div class="step"><div class="n">02</div><h3>Checkout</h3><p>Pay securely on Whop. The button on each product takes you straight there.</p></div>
+    <div class="step"><div class="n">03</div><h3>Start</h3><p>Get access right after purchase and begin at your own pace, on any device.</p></div>
+  </div>
+</div></section>
+
+<div class="quote"><div class="wrap">
+  <div class="divider">&#10086;</div>
+  <blockquote>The earth has music for those who listen.</blockquote>
+  <div class="divider">&#10086;</div>
+</div></div>
+
+<section id="about"><div class="wrap about">
+  <div><div class="eyebrow">About ZIZI</div><h2>Calm, practical, made to be used.</h2>
+    <p>ZIZI is a digital products brand built around slowing down and doing things well. We turn useful knowledge into clear, organised guides, so you spend less time searching and more time doing.</p>
+    <p>New products are added as they are created, so check back often.</p></div>
+  <div class="values"><div>Focus</div><div>Growth</div><div>Gratitude</div><div>Mindfulness</div></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <div class="head"><div class="eyebrow">Good to know</div><h2>Questions</h2></div>
+  <div class="faq">
+    <details><summary>What do I receive after buying?</summary><p>You get access to your digital product through Whop right after checkout. The details of each product are on its Whop page.</p></details>
+    <details><summary>Where does checkout happen?</summary><p>On Whop. The buttons on this site open the product's Whop page, where you pay securely.</p></details>
+    <details><summary>Do the guides replace professional advice?</summary><p>No. They are educational resources. For health, pets, children or finances, please also speak with a qualified professional.</p></details>
+    <details><summary>Will more products be added?</summary><p>Yes. New guides are added as they are created.</p></details>
+    <details><summary>I have a question about an order.</summary><p>Message us using the contact details below and we will help.</p></details>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <div class="head"><div class="eyebrow">Say hello</div><h2>Get in touch</h2><p>Questions, feedback or ideas for the next guide? We would love to hear from you.</p></div>
+  <div class="links">
+    <a class="btn" href="https://wa.me/2347073398589" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn ghost" href="mailto:zion.odafe.3506@gmail.com">Email</a>
+    <a class="btn ghost" href="https://instagram.com/zion.is.not.cool" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="brand"><svg style="color:var(--cream)" viewBox="0 0 64 100" aria-hidden="true"><use href="#mark"/></svg><span>ZIZI</span></div>
+  <div>Slow moments. Loud dreams. Wild heart.</div>
+  <div style="margin-top:10px">&copy; <span id="yr"></span> ZIZI. All rights reserved.</div>
+</div></footer>
+
+<script>
+/* ============================================================
+   ADD A NEW PRODUCT: copy one block below, paste it at the END of
+   the list, change the fields, and save. It appears on the site.
+   ============================================================ */
+const PRODUCTS = [
+  {
+    name: "Pet Care Essentials",
+    tag: "eBook guide",
+    description: "Master the fundamentals of keeping your pets healthy and happy, with practical guidance for dogs, cats and other common pets.",
+    includes: ["Nutrition and feeding guides","Grooming and hygiene routines","Behavioral training fundamentals","Emergency care and first aid basics"],
+    url: "https://whop.com/zizi-0df8/pet-care-essentials-11/"
+  },
+  {
+    name: "Thriving Little Eaters",
+    tag: "eBook guide",
+    description: "Know exactly what is right for your child's stage, with clear, stage-by-stage milestones and guidance for confident parenting.",
+    includes: ["Milestone checklist for each age group","Practical activities to support development","Red flags and when to reach out to a professional","Quick reference guides"],
+    url: "https://whop.com/zizi-0df8/thriving-little-eaters/"
+  },
+  {
+    name: "Beauty Business Blueprint",
+    tag: "eBook guide",
+    description: "Turn your talent into a fully booked, profitable beauty business with a complete framework for branding, pricing and clients.",
+    includes: ["Branding and positioning framework","Premium pricing models","Deposit policy templates","Copy-paste client scripts"],
+    url: "https://whop.com/zizi-0df8/beauty-business-blueprint-93/"
+  },
+  {
+    name: "30-Day Money-Making Blueprint",
+    tag: "eBook guide",
+    description: "Step-by-step strategies and a daily action plan to start building income within a month, with no fluff.",
+    includes: ["30-day roadmap","Daily action checklist","Quick-start templates and frameworks","Bonus resources and tools list"],
+    url: "https://whop.com/zizi-0df8/30-day-money-making-blueprint-ebook/"
+  }
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+document.getElementById('product-grid').innerHTML = PRODUCTS.map(p => `
+  <article class="card">
+    <div class="tag">${esc(p.tag || 'Digital product')}</div>
+    <h3>${esc(p.name)}</h3>
+    <p>${esc(p.description)}</p>
+    <ul>${(p.includes || []).map(i => `<li>${esc(i)}</li>`).join('')}</ul>
+    <a class="btn" href="${esc(p.url)}" target="_blank" rel="noopener">View on Whop</a>
+  </article>`).join('');
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
