@@ -88,7 +88,7 @@ footer .brand{justify-content:center;margin-bottom:12px}
 .cover::before{content:"";position:absolute;inset:0 auto 0 0;width:9%;z-index:2;background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(255,255,255,.22) 42%,rgba(0,0,0,.3) 64%,transparent);border-right:1px solid rgba(0,0,0,.25);pointer-events:none}
 .cover::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(115deg,rgba(255,255,255,.16),transparent 40%);pointer-events:none}
 @media(max-width:760px){.book-inner,.book:hover .book-inner{transform:rotateY(-8deg)}}
-.cover .ct{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:34% 9% 9% 15%;text-align:left;font-family:var(--serif);font-weight:600;font-size:1.32rem;line-height:1.08;color:var(--cream);background:linear-gradient(180deg,transparent,rgba(16,24,16,.9) 58%)}
+.cover .ct{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:20% 9% 8% 15%;text-align:left;font-family:var(--serif);font-weight:600;font-size:1.32rem;line-height:1.08;color:var(--cream);background:linear-gradient(180deg,transparent,rgba(16,24,16,.88) 50%)}
 .cover .ct small{display:block;margin-bottom:8px;font-family:var(--sans);font-weight:500;font-size:.5rem;letter-spacing:.34em;color:var(--caramel)}
 .book-item .tag{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--caramel)}
 .book-item h3{font-size:1.75rem;color:var(--cream);margin:10px 0}
@@ -199,8 +199,7 @@ const PRODUCTS = [
     tag: "eBook guide",
     description: "Master the fundamentals of keeping your pets healthy and happy, with practical guidance for dogs, cats and other common pets.",
     includes: ["Nutrition and feeding guides","Grooming and hygiene routines","Behavioral training fundamentals","Emergency care and first aid basics"],
-    image: "https://whop.com/core/images/whop/i/zizi-0df8/prod_hKb61huIohnIL/?v=286t1l4nz6k",
-    crop: [1150, 110, 485, 664],
+    image: "images/pet-care.jpg",
     url: "https://whop.com/zizi-0df8/pet-care-essentials-11/"
   },
   {
@@ -208,8 +207,7 @@ const PRODUCTS = [
     tag: "eBook guide",
     description: "Know exactly what is right for your child's stage, with clear, stage-by-stage milestones and guidance for confident parenting.",
     includes: ["Milestone checklist for each age group","Practical activities to support development","Red flags and when to reach out to a professional","Quick reference guides"],
-    image: "https://whop.com/core/images/whop/i/zizi-0df8/prod_6TuItdD9HUZFC/?v=xfed768qip",
-    crop: [1150, 110, 485, 664],
+    image: "images/little-eaters.jpg",
     url: "https://whop.com/zizi-0df8/thriving-little-eaters/"
   },
   {
@@ -217,8 +215,7 @@ const PRODUCTS = [
     tag: "eBook guide",
     description: "Turn your talent into a fully booked, profitable beauty business with a complete framework for branding, pricing and clients.",
     includes: ["Branding and positioning framework","Premium pricing models","Deposit policy templates","Copy-paste client scripts"],
-    image: "https://whop.com/core/images/whop/i/zizi-0df8/prod_OQrqL8zNhq7Sl/?v=kp9kbterdb",
-    crop: [1150, 110, 485, 664],
+    image: "images/beauty-blueprint.jpg",
     url: "https://whop.com/zizi-0df8/beauty-business-blueprint-93/"
   },
   {
@@ -226,8 +223,7 @@ const PRODUCTS = [
     tag: "eBook guide",
     description: "Step-by-step strategies and a daily action plan to start building income within a month, with no fluff.",
     includes: ["30-day roadmap","Daily action checklist","Quick-start templates and frameworks","Bonus resources and tools list"],
-    image: "https://whop.com/core/images/whop/i/zizi-0df8/prod_b05L369b3gxG9/?v=qkutunxg16",
-    crop: [1150, 110, 485, 664],
+    image: "images/money-blueprint.jpg",
     url: "https://whop.com/zizi-0df8/30-day-money-making-blueprint-ebook/"
   }
 ];
@@ -235,7 +231,8 @@ const PRODUCTS = [
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const IMG_W = 1695, IMG_H = 886;
 const coverStyle = p => {
-  const c = p.crop || [0, 0, IMG_W, IMG_H];
+  if (!p.crop) return `background-image:url('${esc(p.image)}');background-size:cover;background-position:center`;
+  const c = p.crop;
   const bx = (c[0] / (IMG_W - c[2]) * 100) || 0, by = (c[1] / (IMG_H - c[3]) * 100) || 0;
   return `background-image:url('${esc(p.image)}');background-size:${(IMG_W / c[2] * 100).toFixed(1)}% auto;background-position:${bx.toFixed(1)}% ${by.toFixed(1)}%`;
 };
