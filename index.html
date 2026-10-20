@@ -53,17 +53,7 @@ section{padding:84px 0}
 .head{text-align:center;max-width:620px;margin:0 auto 52px}
 .head h2{font-size:clamp(2rem,5vw,3.2rem);color:var(--cream);margin-top:10px}
 .head p{color:var(--muted);margin:14px 0 0}
-.grid{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.card{display:flex;flex-direction:column;background:linear-gradient(160deg,rgba(59,58,42,.75),rgba(30,42,30,.85));border:1px solid rgba(220,203,164,.16);border-radius:20px;padding:30px 26px;transition:.3s;position:relative;overflow:hidden}
-.card::after{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(166,124,82,.25),transparent 70%)}
-.card:hover{transform:translateY(-6px);border-color:rgba(220,203,164,.4);box-shadow:0 18px 40px rgba(0,0,0,.35)}
-.card .tag{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--caramel)}
-.card h3{font-size:1.75rem;color:var(--cream);margin:12px 0 10px}
-.card p{color:var(--muted);font-size:.94rem;margin:0 0 16px}
-.card ul{list-style:none;padding:0;margin:0 0 26px;font-size:.86rem;color:var(--text)}
-.card li{padding:5px 0 5px 20px;position:relative}
-.card li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:1px;background:var(--caramel)}
-.card .btn{margin-top:auto;text-align:center}
+.grid{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr))}
 .steps{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));text-align:center}
 .step .n{font-family:var(--serif);font-size:3rem;color:var(--caramel);line-height:1}
 .step h3{font-size:1.4rem;color:var(--cream);margin:8px 0}
@@ -88,6 +78,25 @@ footer{border-top:1px solid rgba(220,203,164,.14);padding:40px 0 48px;text-align
 footer .brand{justify-content:center;margin-bottom:12px}
 @media(max-width:760px){nav ul{display:none}.hero{padding:80px 0 70px}section{padding:64px 0}.values{grid-template-columns:1fr 1fr}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.book-item{display:flex;flex-direction:column;align-items:center;text-align:center}
+.book{position:relative;display:block;width:min(230px,62vw);aspect-ratio:3/4.1;margin:14px auto 44px;perspective:1100px}
+.book::after{content:"";position:absolute;left:4%;right:-10%;bottom:-24px;height:24px;background:radial-gradient(ellipse at center,rgba(0,0,0,.55),transparent 70%);filter:blur(5px)}
+.book-inner{position:absolute;inset:0;transform:rotateY(-16deg);transform-origin:left center;transition:transform .5s ease}
+.book:hover .book-inner,.book:focus-visible .book-inner{transform:rotateY(-6deg) translateY(-6px)}
+.pages{position:absolute;top:1.5%;bottom:1.5%;right:-3.6%;width:5%;border-radius:0 3px 3px 0;background:repeating-linear-gradient(180deg,#EDE3C8 0 2px,#CDBF9C 2px 3px);box-shadow:inset 3px 0 5px rgba(0,0,0,.3)}
+.cover{position:absolute;inset:0;overflow:hidden;border-radius:2px 6px 6px 2px;background:linear-gradient(160deg,#3B3A2A,#1E2A1E) center/cover no-repeat;box-shadow:0 20px 34px rgba(0,0,0,.5),inset 0 0 0 1px rgba(220,203,164,.18)}
+.cover::before{content:"";position:absolute;inset:0 auto 0 0;width:9%;z-index:2;background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(255,255,255,.22) 42%,rgba(0,0,0,.3) 64%,transparent);border-right:1px solid rgba(0,0,0,.25);pointer-events:none}
+.cover::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(115deg,rgba(255,255,255,.16),transparent 40%);pointer-events:none}
+@media(max-width:760px){.book-inner,.book:hover .book-inner{transform:rotateY(-8deg)}}
+.cover .ct{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:20% 9% 8% 15%;text-align:left;font-family:var(--serif);font-weight:600;font-size:1.32rem;line-height:1.08;color:var(--cream);background:linear-gradient(180deg,transparent,rgba(16,24,16,.88) 50%)}
+.cover .ct small{display:block;margin-bottom:8px;font-family:var(--sans);font-weight:500;font-size:.5rem;letter-spacing:.34em;color:var(--caramel)}
+.book-item .tag{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--caramel)}
+.book-item h3{font-size:1.75rem;color:var(--cream);margin:10px 0}
+.book-item p{color:var(--muted);font-size:.94rem;margin:0 0 16px;max-width:460px}
+.book-item ul{list-style:none;padding:0;margin:0 0 24px;font-size:.86rem;color:var(--text);text-align:left}
+.book-item li{padding:5px 0 5px 20px;position:relative}
+.book-item li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:1px;background:var(--caramel)}
+.book-item .btn{margin-top:auto}
 </style>
 </head>
 <body>
@@ -190,6 +199,7 @@ const PRODUCTS = [
     tag: "eBook guide",
     description: "Master the fundamentals of keeping your pets healthy and happy, with practical guidance for dogs, cats and other common pets.",
     includes: ["Nutrition and feeding guides","Grooming and hygiene routines","Behavioral training fundamentals","Emergency care and first aid basics"],
+    image: "pet-care.jpeg",
     url: "https://whop.com/zizi-0df8/pet-care-essentials-11/"
   },
   {
@@ -197,6 +207,7 @@ const PRODUCTS = [
     tag: "eBook guide",
     description: "Know exactly what is right for your child's stage, with clear, stage-by-stage milestones and guidance for confident parenting.",
     includes: ["Milestone checklist for each age group","Practical activities to support development","Red flags and when to reach out to a professional","Quick reference guides"],
+    image: "little-eaters.jpeg",
     url: "https://whop.com/zizi-0df8/thriving-little-eaters/"
   },
   {
@@ -204,6 +215,7 @@ const PRODUCTS = [
     tag: "eBook guide",
     description: "Turn your talent into a fully booked, profitable beauty business with a complete framework for branding, pricing and clients.",
     includes: ["Branding and positioning framework","Premium pricing models","Deposit policy templates","Copy-paste client scripts"],
+    image: "beauty-blueprint.jpeg",
     url: "https://whop.com/zizi-0df8/beauty-business-blueprint-93/"
   },
   {
@@ -211,13 +223,26 @@ const PRODUCTS = [
     tag: "eBook guide",
     description: "Step-by-step strategies and a daily action plan to start building income within a month, with no fluff.",
     includes: ["30-day roadmap","Daily action checklist","Quick-start templates and frameworks","Bonus resources and tools list"],
+    image: "money-blueprint.jpeg",
     url: "https://whop.com/zizi-0df8/30-day-money-making-blueprint-ebook/"
   }
 ];
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const IMG_W = 1695, IMG_H = 886;
+const coverStyle = p => {
+  if (!p.crop) return `background-image:url('${esc(p.image)}');background-size:cover;background-position:center`;
+  const c = p.crop;
+  const bx = (c[0] / (IMG_W - c[2]) * 100) || 0, by = (c[1] / (IMG_H - c[3]) * 100) || 0;
+  return `background-image:url('${esc(p.image)}');background-size:${(IMG_W / c[2] * 100).toFixed(1)}% auto;background-position:${bx.toFixed(1)}% ${by.toFixed(1)}%`;
+};
 document.getElementById('product-grid').innerHTML = PRODUCTS.map(p => `
-  <article class="card">
+  <article class="book-item">
+    <a class="book" href="${esc(p.url)}" target="_blank" rel="noopener" aria-label="${esc(p.name)} on Whop">
+      <span class="book-inner"><span class="pages"></span>
+        <span class="cover"${p.image ? ` style="${coverStyle(p)}"` : ''}><span class="ct"><small>ZIZI</small>${esc(p.name)}</span></span>
+      </span>
+    </a>
     <div class="tag">${esc(p.tag || 'Digital product')}</div>
     <h3>${esc(p.name)}</h3>
     <p>${esc(p.description)}</p>
