@@ -12,6 +12,7 @@ In `index.html`, find `const PRODUCTS = [` and copy one product block to the end
   tag: "eBook guide",
   description: "One or two sentences about what it is for.",
   includes: ["Point one","Point two","Point three"],
+  image: "https://link-to-the-product-cover-image.png",
   url: "https://whop.com/your-new-product-link/"
 }
 ```
