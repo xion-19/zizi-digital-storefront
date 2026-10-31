@@ -97,9 +97,12 @@ footer .brand{justify-content:center;margin-bottom:12px}
 .book-item li{padding:5px 0 5px 20px;position:relative}
 .book-item li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:1px;background:var(--caramel)}
 .book-item .btn{margin-top:auto}
+#ribbon-bg{position:fixed;inset:0;z-index:-1;pointer-events:none}
+#ribbon-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,42,30,.55),rgba(30,42,30,.38) 50%,rgba(30,42,30,.62))}
 </style>
 </head>
 <body>
+<div id="ribbon-bg" aria-hidden="true"></div>
 
 <!-- Reusable ZIZI mark -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -251,5 +254,6 @@ document.getElementById('product-grid').innerHTML = PRODUCTS.map(p => `
   </article>`).join('');
 document.getElementById('yr').textContent = new Date().getFullYear();
 </script>
+<script type="module" src="/src/background.tsx"></script>
 </body>
 </html>
